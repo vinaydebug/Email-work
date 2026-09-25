@@ -1,0 +1,119 @@
+%%[
+VAR @fName, @lastDest, @lastTripDate, @style, @tier, @points, @homeCity
+SET @fName        = Trim(AttributeValue("FirstName"))
+SET @lastDest     = Trim(AttributeValue("LastDestination"))
+SET @lastTripDate = AttributeValue("LastTripDate")
+SET @style        = Trim(AttributeValue("TravelStyle"))
+SET @tier         = Trim(AttributeValue("LoyaltyTier"))
+SET @points       = AttributeValue("PointsBalance")
+SET @homeCity     = Trim(AttributeValue("HomeCity"))
+
+VAR @hasTrip
+SET @hasTrip = 1
+IF Empty(@lastDest) OR Empty(@lastTripDate) THEN SET @hasTrip = 0 ENDIF
+
+IF Empty(@fName)     THEN SET @fName     = "Traveller"         ENDIF
+IF Empty(@style)     THEN SET @style     = "General"           ENDIF
+IF Empty(@tier)      THEN SET @tier      = "Bronze"            ENDIF
+IF Empty(@points)    THEN SET @points    = 0                   ENDIF
+IF Empty(@lastDest)  THEN SET @lastDest  = "somewhere amazing" ENDIF
+IF Empty(@homeCity)  THEN SET @homeCity  = "your city"         ENDIF
+
+VAR @rows, @row, @destName, @destTagline, @destImg, @destPrice, @bookURL, @nights, @country, @region
+SET @rows = LookupRows("Destinations", "TravelStyle", @style)
+IF RowCount(@rows) == 0 THEN
+  SET @rows = LookupRows("Destinations", "TravelStyle", "General")
+ENDIF
+
+IF RowCount(@rows) > 0 THEN
+  SET @row        = Row(@rows, 1)
+  SET @destName    = Field(@row, "Destination")
+  SET @destTagline = Field(@row, "Tagline")
+  SET @destPrice   = Field(@row, "FromPrice")
+  SET @bookURL     = Field(@row, "BookURL")
+  SET @nights      = Field(@row, "Nights")
+  SET @country     = Field(@row, "Country")
+  SET @region      = Field(@row, "Region")
+END IF
+
+IF Empty(@destName)    THEN SET @destName    = "Bali"                END IF
+IF Empty(@destTagline) THEN SET @destTagline = "Where relaxation meets adventure" END IF
+IF Empty(@destImg)     THEN
+  IF @style == "Beach" OR @style == "Adventure" OR @style == "Culture" OR @style == "Luxury" OR @style == "Family" OR @style == "Romantic" THEN
+    SET @destImg = Concat("https://images.ampscriptacademy.com.au/uploads/dest-", Lowercase(@style), ".jpg")
+  ELSE
+    SET @destImg = "https://images.ampscriptacademy.com.au/uploads/dest-general.jpg"
+  END IF
+END IF
+IF Empty(@destPrice)   THEN SET @destPrice   = 899                  END IF
+IF Empty(@bookURL)     THEN SET @bookURL     = "https://nolinkprovided.com/" END IF
+IF Empty(@nights)      THEN SET @nights      = 7                    END IF
+IF Empty(@country)     THEN SET @country     = ""                   END IF
+IF Empty(@region)      THEN SET @region      = ""                   END IF
+
+VAR @disc, @tierPerk
+IF @tier == "Platinum" THEN
+  SET @disc = 20
+  SET @tierPerk = "Platinum members save 20% + free room upgrade + priority boarding"
+ELSEIF @tier == "Gold" THEN
+  SET @disc = 15
+  SET @tierPerk = "Gold members save 15% + free airport lounge access"
+ELSEIF @tier == "Silver" THEN
+  SET @disc = 10
+  SET @tierPerk = "Silver members save 10% on every trip"
+ELSE
+  SET @disc = 5
+  SET @tierPerk = "Bronze members save 5% on every trip"
+END IF
+
+SET @basePrice = Replace(Replace(@destPrice, "$", ""), ",", "")
+SET @salePrice = Divide(Multiply(@basePrice, Subtract(100, @disc)), 100)
+SET @baseFmt   = Concat("$", FormatNumber(@basePrice, "N0", "en-US"))
+SET @saleFmt   = Concat("$", FormatNumber(@salePrice, "N0", "en-US"))
+SET @pointsFmt = FormatNumber(@points, "N0", "en-US")
+
+VAR @lastTripFmt, @daysSince, @dayWord
+SET @lastTripFmt = "Recently"
+SET @daysSince   = 0
+IF @hasTrip == 1 THEN
+  SET @lastTripFmt = FormatDate(@lastTripDate, "dd MMM yyyy")
+  SET @daysSince   = DateDiff(@lastTripDate, Now(), "D")
+END IF
+SET @dayWord = "days"
+IF @daysSince == 1 THEN SET @dayWord = "day" END IF
+
+VAR @emoji, @heroImg, @heroAlt
+IF @style == "Beach" THEN
+  SET @emoji = "&#127958;"
+ELSEIF @style == "Adventure" THEN
+  SET @emoji = "&#9968;"
+ELSEIF @style == "City" THEN
+  SET @emoji = "&#127961;"
+ELSEIF @style == "Culture" THEN
+  SET @emoji = "&#127963;"
+ELSEIF @style == "Wildlife" THEN
+  SET @emoji = "&#129409;"
+ELSEIF @style == "Foodie" THEN
+  SET @emoji = "&#127837;"
+ELSE
+  SET @emoji = "&#127757;"
+END IF
+
+IF @style == "Beach" OR @style == "Adventure" OR @style == "Culture" OR @style == "Luxury" OR @style == "Family" OR @style == "Romantic" THEN
+  SET @heroImg = Concat("https://images.ampscriptacademy.com.au/uploads/hero-", Lowercase(@style), ".jpg")
+ELSE
+  SET @heroImg = "https://images.ampscriptacademy.com.au/uploads/hero-general.jpg"
+END IF
+SET @heroAlt = "Your next escape awaits"
+
+VAR @preheader, @headline, @subhead, @destAlt, @ctaText
+IF @hasTrip == 1 AND @daysSince > 0 THEN
+  SET @preheader = Concat(@fName, ", it's been ", @daysSince, " ", @dayWord, " since ", @lastDest, ". Ready for ", @destName, "?")
+ELSE
+  SET @preheader = Concat(@fName, ", your next escape is ready.")
+END IF
+SET @headline = Concat("Where to next, ", @fName, "?")
+SET @subhead  = Concat("We matched you with ", @destName, ", picked for your ", @style, " travel style.")
+SET @destAlt  = Concat("Discover ", @destName)
+SET @ctaText  = Concat("Book ", @destName)
+]%%
