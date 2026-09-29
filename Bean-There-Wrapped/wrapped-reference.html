@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Your Year, Wrapped ☕</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <!--[if mso]>
+  <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+  </xml>
+  <![endif]-->
+  
+  <style type="text/css">
+    /* ===== RESET ===== */
+    body, table, td, p, h1, h2, h3, h4, a { margin: 0; padding: 0; }
+    body { width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }
+    a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }
+    
+    /* ===== DESIGN TOKENS ===== */
+    :root {
+      --espresso: #1B1B1B;
+      --crema: #F5F0E8;
+      --latte: #E8DDD0;
+      --caramel: #D4A574;
+      --mocha: #8B6F4D;
+      --espresso-bean: #3D2B1F;
+      --foam: #FFFFFF;
+      --cinnamon: #C4785E;
+      --gold-foam: #F0C87C;
+      --mint-matcha: #A8D5BA;
+      --rose-latte: #E8B4B4;
+    }
+    
+    /* ===== BASE ===== */
+    .email-bg { background-color: var(--crema); }
+    .container { max-width: 640px; margin: 0 auto; background: var(--foam); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(27,27,27,0.08); }
+    
+    /* ===== TYPOGRAPHY ===== */
+    .headline { font-family: 'Syne', Georgia, serif; font-size: 48px; line-height: 52px; font-weight: 800; color: var(--foam); letter-spacing: -1px; }
+    .subhead { font-family: 'DM Sans', Helvetica, sans-serif; font-size: 18px; line-height: 26px; font-weight: 400; color: rgba(245,240,232,0.85); }
+    .stat-number { font-family: 'Syne', Georgia, serif; font-size: 56px; line-height: 60px; font-weight: 800; color: var(--espresso); }
+    .stat-label { font-family: 'DM Sans', Helvetica, sans-serif; font-size: 13px; line-height: 18px; font-weight: 600; color: var(--mocha); text-transform: uppercase; letter-spacing: 1.5px; }
+    .body-copy { font-family: 'DM Sans', Helvetica, sans-serif; font-size: 16px; line-height: 24px; font-weight: 400; color: var(--espresso); }
+    .badge-title { font-family: 'DM Sans', Helvetica, sans-serif; font-size: 18px; line-height: 24px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+    .badge-copy { font-family: 'DM Sans', Helvetica, sans-serif; font-size: 15px; line-height: 22px; font-weight: 400; color: var(--espresso); }
+    .drink-name { font-family: 'Syne', Georgia, serif; font-size: 22px; line-height: 28px; font-weight: 700; color: var(--espresso); }
+    .drink-meta { font-family: 'DM Sans', Helvetica, sans-serif; font-size: 14px; line-height: 20px; font-weight: 500; color: var(--mocha); }
+    .drink-desc { font-family: 'DM Sans', Helvetica, sans-serif; font-size: 15px; line-height: 22px; font-weight: 400; color: var(--espresso-bean); }
+    .section-title { font-family: 'Syne', Georgia, serif; font-size: 24px; line-height: 30px; font-weight: 700; color: var(--espresso); }
+    .rec-name { font-family: 'DM Sans', Helvetica, sans-serif; font-size: 15px; line-height: 20px; font-weight: 600; color: var(--espresso); }
+    .rec-meta { font-family: 'DM Sans', Helvetica, sans-serif; font-size: 13px; line-height: 18px; font-weight: 400; color: var(--mocha); }
+    .cta-button { font-family: 'DM Sans', Helvetica, sans-serif; font-size: 15px; line-height: 20px; font-weight: 700; color: var(--foam); text-transform: uppercase; letter-spacing: 1px; text-decoration: none; }
+    .footer-text { font-family: 'DM Sans', Helvetica, sans-serif; font-size: 12px; line-height: 18px; font-weight: 400; color: rgba(245,240,232,0.6); }
+    
+    /* ===== SECTIONS ===== */
+    .hero { background: var(--espresso-bean); padding: 48px 32px; text-align: center; }
+    .hero-icon { width: 80px; height: 80px; margin-bottom: 16px; }
+    
+    .stat-row { padding: 32px 24px; background: var(--foam); }
+    .stat-table { width: 100%; display: table; table-layout: fixed; }
+    .stat-cell { display: table-cell; width: 25%; text-align: center; vertical-align: middle; padding: 0 8px; }
+    .stat-icon { font-size: 28px; line-height: 1; margin-bottom: 8px; display: block; }
+    
+    .drink-card { background: var(--latte); padding: 32px 24px; }
+    .drink-inner { display: table; width: 100%; }
+    .drink-img-cell { display: table-cell; width: 112px; vertical-align: top; padding-right: 24px; }
+    .drink-img { width: 96px; height: 96px; border-radius: 12px; object-fit: cover; display: block; }
+    .drink-info-cell { display: table-cell; vertical-align: middle; }
+    .drink-cta { display: inline-block; margin-top: 16px; background: var(--espresso-bean); color: var(--foam) !important; padding: 12px 24px; border-radius: 8px; text-decoration: none; }
+    .drink-cta:hover { background: var(--cinnamon) !important; }
+    
+    .badge-section { padding: 32px 24px; text-align: center; }
+    .badge-card { display: inline-block; padding: 24px 32px; border-radius: 16px; max-width: 100%; }
+    .badge-icon { font-size: 32px; line-height: 1; margin-bottom: 12px; display: block; }
+    
+    .rec-section { background: var(--foam); padding: 32px 24px; }
+    .rec-grid { display: table; width: 100%; table-layout: fixed; }
+    .rec-item { display: table-cell; width: 33.33%; text-align: center; padding: 0 12px; vertical-align: top; }
+    .rec-img { width: 100%; max-width: 140px; height: 140px; border-radius: 12px; object-fit: cover; display: block; margin: 0 auto 12px; }
+    .rec-cta { display: inline-block; margin-top: 8px; padding: 8px 16px; background: var(--caramel); color: var(--espresso) !important; border-radius: 6px; font-size: 12px; font-weight: 600; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; }
+    .rec-cta:hover { background: var(--cinnamon) !important; }
+    
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--caramel), transparent); margin: 0 24px; }
+    .footer { background: var(--espresso-bean); padding: 24px 32px; text-align: center; }
+    .social-links { margin-top: 16px; }
+    .social-links a { display: inline-block; margin: 0 8px; }
+    .social-icon { width: 28px; height: 28px; display: block; }
+    
+    /* ===== MOBILE ===== */
+    @media screen and (max-width: 480px) {
+      .container { border-radius: 0; }
+      .hero { padding: 36px 20px; }
+      .headline { font-size: 36px; line-height: 42px; }
+      .subhead { font-size: 16px; line-height: 22px; }
+      .stat-number { font-size: 44px; line-height: 48px; }
+      .stat-row { padding: 24px 16px; }
+      .stat-cell { display: block; width: 100%; padding: 16px 0; border-top: 1px solid var(--latte); }
+      .stat-cell:first-child { border-top: none; }
+      .drink-inner { display: block; text-align: center; }
+      .drink-img-cell { display: inline-block; width: auto; padding-right: 0; padding-bottom: 16px; }
+      .drink-info-cell { display: block; }
+      .rec-grid { display: block; }
+      .rec-item { display: inline-block; width: 48%; max-width: 140px; vertical-align: top; margin: 0 4px 20px; }
+      .rec-img { max-width: 100%; height: auto; }
+      .footer { padding: 20px; }
+    }
+    
+    /* ===== OUTLOOK FIXES ===== */
+    .mso-hide { mso-hide: all; display: none !important; }
+  </style>
+  
+  <!--[if mso]>
+  <style type="text/css">
+    .container { width: 640px !important; }
+    .stat-cell { width: 25% !important; display: inline-block !important; float: left !important; }
+    .rec-item { width: 33.33% !important; display: inline-block !important; float: left !important; }
+  </style>
+  <![endif]-->
+</head>
+
+<body class="email-bg" style="margin: 0; padding: 0; background-color: #F5F0E8;">
+  <!-- PREHEADER (hidden) -->
+  <div style="display: none; max-height: 0px; overflow: hidden; font-size: 1px; line-height: 1px; color: #F5F0E8; opacity: 0;">
+    %%=v(@preheader)=%%
+  </div>
+
+  <!-- WRAPPER -->
+  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="wrapper">
+    <tr>
+      <td align="center" style="padding: 40px 16px;">
+        
+        <!-- MAIN CONTAINER -->
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="container">
+          
+          <!-- ===== HERO ===== -->
+          <tr>
+            <td class="hero">
+              <img src="https://cdn.beanthere.co/email/steam-icon.svg" alt="" width="80" height="80" class="hero-icon" style="width: 80px; height: 80px; display: block; margin: 0 auto 16px;">
+              <h1 class="headline">YOUR YEAR, WRAPPED</h1>
+              <p class="subhead" style="margin-top: 12px; max-width: 480px; margin-left: auto; margin-right: auto;">%%=v(@headline)=%%</p>
+            </td>
+          </tr>
+          
+          <!-- ===== DIVIDER ===== -->
+          <tr>
+            <td><div class="divider" style="height: 1px; background: linear-gradient(90deg, transparent, #D4A574, transparent); margin: 0 24px; font-size: 0; line-height: 0;">&nbsp;</div></td>
+          </tr>
+          
+          <!-- ===== STAT ROW ===== -->
+          <tr>
+            <td class="stat-row">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="stat-table">
+                <tr>
+                  <!-- Stat 1: Total Cups -->
+                  <td class="stat-cell">
+                    <span class="stat-icon" aria-hidden="true">☕</span>
+                    <div class="stat-number">%%=v(@cupsFmt)=%%</div>
+                    <div class="stat-label">Total Cups</div>
+                  </td>
+                  <!-- Stat 2: Peak Hour -->
+                  <td class="stat-cell">
+                    <span class="stat-icon" aria-hidden="true">🌅</span>
+                    <div class="stat-number" style="font-size: 36px; line-height: 40px;">%%=v(@peakLabel)=%%</div>
+                    <div class="stat-label">Peak Hour</div>
+                  </td>
+                  <!-- Stat 3: Top Category -->
+                  <td class="stat-cell">
+                    <span class="stat-icon" aria-hidden="true">%%=v(@catIcon)=%%</span>
+                    <div class="stat-number" style="font-size: 36px; line-height: 40px;">%%=v(@topCatPct)=%%%</div>
+                    <div class="stat-label">%%=v(@topCategory)=%%</div>
+                  </td>
+                  <!-- Stat 4: Active Weeks -->
+                  <td class="stat-cell">
+                    <span class="stat-icon" aria-hidden="true">📅</span>
+                    <div class="stat-number">%%=v(@weeksFmt)=%%</div>
+                    <div class="stat-label">Active Weeks</div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- ===== DIVIDER ===== -->
+          <tr>
+            <td><div class="divider" style="height: 1px; background: linear-gradient(90deg, transparent, #D4A574, transparent); margin: 0 24px; font-size: 0; line-height: 0;">&nbsp;</div></td>
+          </tr>
+          
+          <!-- ===== FEATURED DRINK CARD ===== -->
+          <tr>
+            <td class="drink-card">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="drink-inner">
+                <tr>
+                  <td class="drink-img-cell">
+                    <a href="%%=v(@reorderURL)=%%" target="_blank" style="text-decoration: none;">
+                      <img src="%%=v(@drinkImage)=%%" alt="%%=v(@drinkName)=%%" width="96" height="96" class="drink-img" style="width: 96px; height: 96px; border-radius: 12px; object-fit: cover; display: block;">
+                    </a>
+                  </td>
+                  <td class="drink-info-cell">
+                    <p class="body-copy" style="margin-bottom: 4px; color: var(--mocha); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px;">YOUR #1 DRINK</p>
+                    <h2 class="drink-name">%%=v(@drinkName)=%%</h2>
+                    <p class="drink-meta" style="margin-top: 4px;">%%=v(@drinkCups)=%% cups • %%=v(@drinkPct)=%%% of your year</p>
+                    <p class="drink-desc" style="margin-top: 12px;">%%=v(@drinkDesc)=%%</p>
+                    <a href="%%=v(@reorderURL)=%%" target="_blank" class="drink-cta">Reorder This Drink →</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- ===== DIVIDER ===== -->
+          <tr>
+            <td><div class="divider" style="height: 1px; background: linear-gradient(90deg, transparent, #D4A574, transparent); margin: 0 24px; font-size: 0; line-height: 0;">&nbsp;</div></td>
+          </tr>
+          
+          <!-- ===== PERSONALITY BADGE ===== -->
+          <tr>
+            <td class="badge-section">
+              <div class="badge-card" style="background: %%=v(@badgeColor)=%%;">
+                <span class="badge-icon" aria-hidden="true">%%=v(@badgeIcon)=%%</span>
+                <p class="badge-title" style="color: var(--espresso); margin: 0 0 8px;">%%=v(@badge)=%%</p>
+                <p class="badge-copy" style="color: var(--espresso); margin: 0; max-width: 480px; margin-left: auto; margin-right: auto;">%%=v(@badgeCopy)=%%</p>
+              </div>
+            </td>
+          </tr>
+          
+          <!-- ===== DIVIDER ===== -->
+          <tr>
+            <td><div class="divider" style="height: 1px; background: linear-gradient(90deg, transparent, #D4A574, transparent); margin: 0 24px; font-size: 0; line-height: 0;">&nbsp;</div></td>
+          </tr>
+          
+          <!-- ===== RECOMMENDATIONS SECTION ===== -->
+          <tr>
+            <td class="rec-section">
+              <h2 class="section-title" style="margin: 0 0 24px; text-align: center;">YOU MIGHT ALSO LOVE</h2>
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="rec-grid">
+                <tr>
+                  <!-- Rec 1 -->
+                  <td class="rec-item">
+                    <a href="%%=v(@rec1URL)=%%" target="_blank" style="text-decoration: none;">
+                      <img src="%%=v(@rec1Image)=%%" alt="%%=v(@rec1Name)=%%" class="rec-img">
+                      <p class="rec-name">%%=v(@rec1Name)=%%</p>
+                      <p class="rec-meta">%%=v(@rec1Reason)=%%</p>
+                      <span class="rec-cta">Try It</span>
+                    </a>
+                  </td>
+                  <!-- Rec 2 -->
+                  <td class="rec-item">
+                    <a href="%%=v(@rec2URL)=%%" target="_blank" style="text-decoration: none;">
+                      <img src="%%=v(@rec2Image)=%%" alt="%%=v(@rec2Name)=%%" class="rec-img">
+                      <p class="rec-name">%%=v(@rec2Name)=%%</p>
+                      <p class="rec-meta">%%=v(@rec2Reason)=%%</p>
+                      <span class="rec-cta">Try It</span>
+                    </a>
+                  </td>
+                  <!-- Rec 3 -->
+                  <td class="rec-item">
+                    <a href="%%=v(@rec3URL)=%%" target="_blank" style="text-decoration: none;">
+                      <img src="%%=v(@rec3Image)=%%" alt="%%=v(@rec3Name)=%%" class="rec-img">
+                      <p class="rec-name">%%=v(@rec3Name)=%%</p>
+                      <p class="rec-meta">%%=v(@rec3Reason)=%%</p>
+                      <span class="rec-cta">Try It</span>
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- ===== FOOTER ===== -->
+          <tr>
+            <td class="footer">
+              <p class="footer-text" style="margin: 0 0 8px;">Bean There Coffee Co. • 42 Roastery Lane, Melbourne VIC 3000</p>
+              <p class="footer-text" style="margin: 0 0 16px;">
+                <a href="%%profile_center_url%%" style="color: rgba(245,240,232,0.6); text-decoration: underline;">Preferences</a> &nbsp;|&nbsp;
+                <a href="%%unsub_center_url%%" style="color: rgba(245,240,232,0.6); text-decoration: underline;">Unsubscribe</a>
+              </p>
+              <div class="social-links">
+                <a href="https://instagram.com/beanthereco" target="_blank"><img src="https://cdn.beanthere.co/email/ig-icon.svg" alt="Instagram" width="28" height="28" class="social-icon"></a>
+                <a href="https://twitter.com/beanthereco" target="_blank"><img src="https://cdn.beanthere.co/email/tw-icon.svg" alt="Twitter" width="28" height="28" class="social-icon"></a>
+                <a href="https://tiktok.com/@beanthereco" target="_blank"><img src="https://cdn.beanthere.co/email/tt-icon.svg" alt="TikTok" width="28" height="28" class="social-icon"></a>
+              </div>
+              <p class="footer-text" style="margin-top: 16px;">%%=v(@currentYear)=%% Bean There Coffee Co. All rights reserved.</p>
+            </td>
+          </tr>
+          
+        </table>
+        <!-- /CONTAINER -->
+        
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
