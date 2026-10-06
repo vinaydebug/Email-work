@@ -2,10 +2,7 @@
 
 A professional collection of responsive HTML email templates designed for various industries and use cases. Each template demonstrates best practices in email design, including responsive layouts, dark mode support, and client-specific compatibility.
 
-<img width="600" alt="_C__Users_PC_ai-job-search_Email-work_Sample%20email%202_index html" src="https://github.com/user-attachments/assets/d178c0b7-dc3a-46d5-a1c9-83adeade6f6b" style="display:inline-block;" />
-<img width="600" alt="_C__Users_PC_ai-job-search_Email-work_Sample%20email%203_index html" src="https://github.com/user-attachments/assets/4eb31763-4f92-408a-9a67-6e28928be2a0" style="display:inline-block;" />
-<img width="600" alt="_C__Users_PC_ai-job-search_Email-work_Sample%20email%204_index html" src="https://github.com/user-attachments/assets/70fa783f-04fc-40aa-9aab-922da743d6d1" style="display:inline-block;" />
-<img width="600" alt="_C__Users_PC_ai-job-search_Email-work_Sample%20email%201_index html" src="https://github.com/user-attachments/assets/20284f0c-754a-4939-a038-b17d89c7dd5c" style="display:inline-block;" />
+<img width="2400" height="2464" alt="email_designs_collage" src="https://github.com/user-attachments/assets/5817cd97-e9ad-4174-81c3-a74c8cdea1b1" />
 
 
 ## 📧 Overview
